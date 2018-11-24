@@ -1,4 +1,4 @@
-package com.arifudesu.latihanfc.main
+package com.arifudesu.latihanfc.view
 
 import com.arifudesu.latihanfc.model.Team
 

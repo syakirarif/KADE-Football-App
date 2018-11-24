@@ -1,7 +1,8 @@
-package com.arifudesu.latihanfc
+package com.arifudesu.latihanfc.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.arifudesu.latihanfc.R
 import com.arifudesu.latihanfc.R.id.favorites
 import com.arifudesu.latihanfc.R.id.teams
 import com.arifudesu.latihanfc.fragment.FavoriteTeamsFragment

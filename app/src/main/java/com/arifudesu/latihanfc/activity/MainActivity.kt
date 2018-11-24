@@ -1,4 +1,4 @@
-package com.arifudesu.latihanfc.main
+package com.arifudesu.latihanfc.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

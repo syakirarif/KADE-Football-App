@@ -1,8 +1,9 @@
-package com.arifudesu.latihanfc
+package com.arifudesu.latihanfc.presenter
 
+import com.arifudesu.latihanfc.model.TeamResponse
 import com.arifudesu.latihanfc.api.ApiRepository
 import com.arifudesu.latihanfc.api.TheSportsDBApi
-import com.arifudesu.latihanfc.model.TeamResponse
+import com.arifudesu.latihanfc.view.TeamsView
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -11,23 +12,23 @@ import org.jetbrains.anko.uiThread
  * </> with <3 by SyakirArif
  * say no to plagiarism
  */
-class TeamDetailPresenter(
-    private val view: TeamDetailView,
+class TeamsPresenter(
+    private val view: TeamsView,
     private val apiRepository: ApiRepository,
     private val gson: Gson
 ) {
-    fun getTeamDetail(teamId: String) {
+    fun getTeamList(league: String?) {
         view.showLoading()
+
         doAsync {
             val data = gson.fromJson(
-                apiRepository
-                    .doRequest(TheSportsDBApi.getTeamDetail(teamId)),
+                apiRepository.doRequest(TheSportsDBApi.getTeams(league)),
                 TeamResponse::class.java
             )
 
             uiThread {
                 view.hideLoading()
-                view.showTeamDetail(data.teams)
+                view.showTeamList(data.teams)
             }
         }
     }

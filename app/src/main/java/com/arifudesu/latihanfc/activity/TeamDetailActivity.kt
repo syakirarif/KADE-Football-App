@@ -1,4 +1,4 @@
-package com.arifudesu.latihanfc
+package com.arifudesu.latihanfc.activity
 
 import android.database.sqlite.SQLiteConstraintException
 import android.graphics.Color
@@ -25,6 +25,8 @@ import com.arifudesu.latihanfc.util.invisible
 import com.arifudesu.latihanfc.util.visible
 import com.arifudesu.latihanfc.db.database
 import com.arifudesu.latihanfc.db.Favorite
+import com.arifudesu.latihanfc.presenter.TeamDetailPresenter
+import com.arifudesu.latihanfc.view.TeamDetailView
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.*
@@ -208,6 +210,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(detail_menu, menu)
         menuItem = menu
+        setFavorite()
         return true
     }
 

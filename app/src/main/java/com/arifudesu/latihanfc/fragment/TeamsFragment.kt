@@ -12,11 +12,11 @@ import android.view.ViewGroup
 import android.widget.*
 import com.arifudesu.latihanfc.R
 import com.arifudesu.latihanfc.R.array.league
-import com.arifudesu.latihanfc.TeamDetailActivity
+import com.arifudesu.latihanfc.activity.TeamDetailActivity
 import com.arifudesu.latihanfc.api.ApiRepository
-import com.arifudesu.latihanfc.main.TeamsAdapter
-import com.arifudesu.latihanfc.main.TeamsPresenter
-import com.arifudesu.latihanfc.main.TeamsView
+import com.arifudesu.latihanfc.adapter.TeamsAdapter
+import com.arifudesu.latihanfc.presenter.TeamsPresenter
+import com.arifudesu.latihanfc.view.TeamsView
 import com.arifudesu.latihanfc.model.Team
 import com.arifudesu.latihanfc.util.invisible
 import com.arifudesu.latihanfc.util.visible

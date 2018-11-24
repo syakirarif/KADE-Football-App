@@ -1,4 +1,4 @@
-package com.arifudesu.latihanfc.main
+package com.arifudesu.latihanfc.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -12,7 +12,7 @@ import org.jetbrains.anko.*
 import com.arifudesu.latihanfc.R.id.team_badge
 import com.arifudesu.latihanfc.R.id.team_name
 import com.arifudesu.latihanfc.model.Team
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 /**
  * </> with <3 by SyakirArif
