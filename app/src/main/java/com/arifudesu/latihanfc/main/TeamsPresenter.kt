@@ -11,8 +11,8 @@ import org.jetbrains.anko.uiThread
  * </> with <3 by SyakirArif
  * say no to plagiarism
  */
-class MainPresenter(
-    private val view: MainView,
+class TeamsPresenter(
+    private val view: TeamsView,
     private val apiRepository: ApiRepository,
     private val gson: Gson
 ) {

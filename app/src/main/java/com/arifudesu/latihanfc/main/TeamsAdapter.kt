@@ -12,12 +12,13 @@ import org.jetbrains.anko.*
 import com.arifudesu.latihanfc.R.id.team_badge
 import com.arifudesu.latihanfc.R.id.team_name
 import com.arifudesu.latihanfc.model.Team
+import org.jetbrains.anko.sdk25.coroutines.onClick
 
 /**
  * </> with <3 by SyakirArif
  * say no to plagiarism
  */
-class MainAdapter(private val teams: List<Team>) :
+class TeamsAdapter(private val teams: List<Team>, private val listener: (Team) -> Unit) :
     RecyclerView.Adapter<TeamViewHolder>() {
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): TeamViewHolder {
         return TeamViewHolder(
@@ -33,7 +34,7 @@ class MainAdapter(private val teams: List<Team>) :
     override fun getItemCount(): Int = teams.size
 
     override fun onBindViewHolder(p0: TeamViewHolder, p1: Int) {
-        p0.bindItem(teams[p1])
+        p0.bindItem(teams[p1], listener)
     }
 
 }
@@ -43,10 +44,12 @@ class TeamViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val teamBadge: ImageView = view.find(team_badge)
     private val teamName: TextView = view.find(team_name)
 
-    fun bindItem(teams: Team) {
+    fun bindItem(teams: Team, listener: (Team) -> Unit) {
 
         Picasso.get().load(teams.teamBadge).into(teamBadge)
         teamName.text = teams.teamName
+
+        itemView.onClick { listener(teams) }
 
     }
 }
